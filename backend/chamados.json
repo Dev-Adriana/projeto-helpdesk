@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "titulo": "Erro no VS Code",
+        "descricao": "Não estou conseguindo instalar a extensão de idioma.",
+        "prioridade": "Média",
+        "tecnico": "Suporte Nível 1",
+        "status": "Resolvido"
+    },
+    {
+        "id": 2,
+        "titulo": "Caixas de som",
+        "descricao": "Som não está funcionando",
+        "prioridade": "Média",
+        "tecnico": "Adriana",
+        "status": "Resolvido",
+        "data_criacao": "07/11/2026 12:55"
+    },
+    {
+        "id": 3,
+        "titulo": "Servidor ",
+        "descricao": "não está funcionando",
+        "prioridade": "Crítica",
+        "tecnico": "Aguardando atribuição",
+        "status": "Aberto",
+        "data_criacao": "08/11/2026 07:51"
+    },
+    {
+        "id": 4,
+        "titulo": "Servidor Central de Arquivos Queimou!",
+        "descricao": "Nenhum setor da empresa consegue acessar a rede local.",
+        "prioridade": "Crítica",
+        "tecnico": "Aguardando atribuição",
+        "status": "Resolvido",
+        "data_criacao": "08/11/2026 08:01"
+    }
+]

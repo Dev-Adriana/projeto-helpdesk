@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpDesk - Sistema de Chamados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🎫 HelpDesk Suporte</h1>
+        <div id="usuario-logado" class="user-info" style="display: none;">
+            <span id="nome-perfil"></span> (<span id="tipo-perfil"></span>)
+            <button onclick="fazerLogout()" class="btn-logout">Sair</button>
+        </div>
+    </header>
+
+    <!-- TELA DE LOGIN (Aparece primeiro) -->
+    <main id="tela-login" class="container-login">
+        <section class="card-login">
+            <h2>Acessar o Sistema</h2>
+            <form id="form-login">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" placeholder="Digite 'tecnico' ou 'usuario'" required>
+                
+                <label for="password">Senha:</label>
+                <input type="password" id="password" placeholder="Digite qualquer senha" required>
+                
+                <button type="submit">Entrar</button>
+            </form>
+            <p style="margin-top: 15px; font-size: 0.85rem; color: #a8a8b3; text-align: center;">
+                Dica: Use o usuário <strong>tecnico</strong> ou <strong>usuario</strong> para testar os perfis.
+            </p>
+        </section>
+    </main>
+
+    <!-- TELA DO SISTEMA (Fica escondida até logar) -->
+    <main id="tela-sistema" class="container" style="display: none;">
+        <!-- Formulário para Criar Chamado (Visível apenas para Usuários) -->
+        <section id="secao-criar-chamado" class="novo-chamado">
+            <h2>Abrir Novo Chamado</h2>
+            <form id="form-chamado">
+                <label for="titulo">Título do Problema:</label>
+                <input type="text" id="titulo" placeholder="Ex: Servidor de arquivos offline" required>
+
+                <label for="descricao">Descrição Detalhada:</label>
+                <textarea id="descricao" placeholder="Descreva o problema aqui..." required></textarea>
+
+                <div class="linha-dupla">
+                    <div>
+                        <label for="prioridade">Prioridade:</label>
+                        <select id="prioridade" required>
+                            <option value="Baixa">Baixa</option>
+                            <option value="Média" selected>Média</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Crítica">Crítica 🔥</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit">Enviar Chamado</button>
+            </form>
+        </section>
+
+        <!-- Painel de Gerenciamento (Visível para Técnicos / Lista para Usuários) -->
+        <section class="lista-chamados">
+            <h2>Painel de Chamados</h2>
+            
+            <!-- Contadores (Apenas Técnicos) -->
+            <div id="painel-contadores" class="painel-contadores" style="display: none;">
+                <div class="contador-card">Abertos: <span id="qtd-abertos">0</span></div>
+                <div class="contador-card">Em Atendimento: <span id="qtd-atendimento">0</span></div>
+                <div class="contador-card">Resolvidos: <span id="qtd-resolvidos">0</span></div>
+            </div>
+
+                                    <!-- Barra de Pesquisa (Apenas Técnicos) -->
+            <input type="text" id="busca-chamado" placeholder="🔍 Pesquisar chamado pelo título..." style="margin-bottom: 20px; display: none;">
+
+            <!-- ADICIONE ESTE BOTÃO LOGO ABAIXO DA BUSCA -->
+            <button id="btn-pdf" class="btn-acao" style="display: none; background-color: #ffcd3c; color: #000; font-weight: bold; margin-bottom: 20px; width: 100%;" onclick="baixarRelatorioPDF()">📄 Gerar Relatório em PDF</button>
+
+
+            <div id="chamados-container">
+                <!-- Os cards aparecem aqui -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

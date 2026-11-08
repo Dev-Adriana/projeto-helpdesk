@@ -1,0 +1,312 @@
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121214;
+    color: #e1e1e6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    width: 100%;
+    background-color: #202024;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #04d361;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+/* Layout Principal */
+.container {
+    display: flex;
+    gap: 30px;
+    width: 90%;
+    max-width: 1100px;
+}
+
+section {
+    flex: 1;
+    background-color: #202024;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: #04d361;
+    border-bottom: 1px solid #323238;
+    padding-bottom: 10px;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #a8a8b3;
+}
+
+input, textarea {
+    width: 100%;
+    background-color: #121214;
+    border: 1px solid #323238;
+    padding: 12px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+    border-color: #04d361;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+button {
+    background-color: #04d361;
+    color: #000;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #029443;
+}
+
+/* Lista de Chamados */
+#chamados-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.chamado-card {
+    background-color: #121214;
+    border: 1px solid #323238;
+    padding: 20px;
+    border-radius: 6px;
+    position: relative;
+}
+
+.chamado-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.chamado-card p {
+    font-size: 0.95rem;
+    color: #a8a8b3;
+    margin-bottom: 15px;
+}
+
+/* Status */
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status.aberto {
+    background-color: rgba(4, 211, 97, 0.1);
+    color: #04d361;
+    border: 1px solid #04d361;
+}
+
+/* Alinhamento dos novos campos */
+.linha-dupla {
+    display: flex;
+    gap: 15px;
+}
+
+.linha-dupla > div {
+    flex: 1;
+}
+
+select {
+    width: 100%;
+    background-color: #121214;
+    border: 1px solid #323238;
+    padding: 12px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Badges de Prioridade */
+.badge-prioridade {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.prioridade-Baixa { background-color: #29292e; color: #a8a8b3; }
+.prioridade-Média { background-color: #ffcd3c; color: #000; }
+.prioridade-Alta { background-color: #e65100; color: #fff; }
+.prioridade-Crítica { background-color: #ff0043; color: #fff; animation: pulse 1.5s infinite; }
+
+/* Técnico e Ações no Card */
+.meta-info {
+    font-size: 0.85rem;
+    color: #a8a8b3;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.acoes-tecnico {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-acao {
+    flex: 1;
+    padding: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background-color: #29292e;
+    color: #fff;
+    border: 1px solid #323238;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.btn-acao:hover {
+    background-color: #323238;
+}
+
+/* Cores de Status Corporativos */
+.status.atendimento {
+    background-color: rgba(0, 136, 255, 0.1);
+    color: #0088ff;
+    border: 1px solid #0088ff;
+}
+
+.status.resolvido {
+    background-color: rgba(4, 211, 97, 0.1);
+    color: #04d361;
+    border: 1px solid #04d361;
+    text-decoration: line-through;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+/* Botão de excluir específico */
+.btn-excluir:hover {
+    background-color: #ff0043 !important;
+    color: #fff !important;
+    border-color: #ff0043 !important;
+}
+
+/* Painel de Contadores */
+.painel-contadores {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.contador-card {
+    flex: 1;
+    background-color: #121214;
+    border: 1px solid #323238;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-align: center;
+    color: #a8a8b3;
+}
+
+/* Destacar os números dentro dos contadores */
+.contador-card span {
+    display: block;
+    font-size: 1.4rem;
+    color: #04d361;
+    margin-top: 5px;
+}
+
+/* Estilos da Tela de Login */
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 50px;
+}
+
+.card-login {
+    width: 100%;
+    background-color: #202024;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Informações do usuário logado no topo */
+.user-info {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #a8a8b3;
+}
+
+.user-info strong {
+    color: #04d361;
+}
+
+.btn-logout {
+    background-color: transparent;
+    color: #f75a68;
+    border: 1px solid #f75a68;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: all 0.2s;
+}
+
+.btn-logout:hover {
+    background-color: #f75a68;
+    color: #fff;
+}
